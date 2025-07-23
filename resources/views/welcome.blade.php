@@ -7,20 +7,39 @@
   <link rel="icon" type="image/x-icon" href="favicon.svg">
   @vite('resources/js/app.js')
   @vite('resources/css/app.css')
+  <style>
+    @font-face {
+        font-family: 'Patrick Hand';
+        src: url('{{ asset('/fonts/PatrickHand-Regular.ttf') }}') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Caveat Brush';
+        src: url('{{ asset('/fonts/CaveatBrush-Regular.ttf') }}') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Bubblegum Sans';
+        src: url('{{ asset('/fonts/BubblegumSans-Regular.ttf') }}') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+</style>
 </head>
 <body>
     <div id="app">
-        {{-- <h1>Jong Nederland Neeritter</h1>
-  <p>
-    Op dit domein komt de wesite voor Jong Nederland Neeritter.
-    <br>
-    Hier wordt momenteel offline aan gewerkt. Wanneer de site af is,
-    <br>
-    wordt deze statische HTML pagina vervangen door de nieuwe site.
-</p> --}}
-        <counter />
+        <h1 class="text-6xl font-bold">Welkom</h1>
+
+        <div class="p-10">
+            <Knop variant="primary" @click="()=>{}" > Word lid </Knop>
+            <br><br>
+            <Navlink icon="i-sleutel" color="jnn-blok-ge" href='/'>voor leiding</NavBarLinkKnop>
+        </div>
     </div>
-
-
 </body>
 </html>

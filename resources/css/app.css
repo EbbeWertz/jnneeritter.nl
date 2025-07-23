@@ -4,12 +4,36 @@
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
+@source '../**/*.vue';
+@source inline("{hover:,}{bg,text}-jnn-hoody");
+@source inline("{group-,}{hover:,}{bg,text}-jnn-blok-{gr,ge,rz,or}");
+@source inline("{hover:,}{bg,text}-jnn-logo-{bl,rz,zw}");
+@source inline("{hover:,}{bg,text}-jnn-paper-{p,s}");
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    /* lettertypes */
+    --font-hand: 'Patrick Hand', cursive, sans-serif; /* standaard (infoboekje font) */
+    --font-brush: 'Caveat Brush', cursive, sans-serif; /* quote/kleine titel */
+    --font-bubblegum: 'Bubblegum Sans', cursive, sans-serif; /* hoofd titel */
+
+    /* hoody donkergroen */
+    --color-jnn-hoody: #2E512F;
+
+    /* kleuren uit blokjes in logo */
+    --color-jnn-blok-gr: #67B66E; /*groen*/
+    --color-jnn-blok-ge: #FCD83A; /*geel*/
+    --color-jnn-blok-rz: #EE81B2; /*roze*/
+    --color-jnn-blok-or: #EB6B44; /*oranje*/
+
+    /* kleuren uit logo zelf */
+    --color-jnn-logo-bl: #01B0EE; /*blauw*/
+    --color-jnn-logo-rz: #EC038B; /*roze*/
+    --color-jnn-logo-ge: #FDEB07; /*geel*/
+    --color-jnn-logo-zw: #231F20; /*zwart*/
+
+    /* achtergrondkleuren */
+    --color-jnn-paper-p: #F9F3E8; /*primair*/
+    --color-jnn-paper-s: #67B66E; /*secundair (transparant)*/
 }
 
-*{
-    color: blue;
-}
+
