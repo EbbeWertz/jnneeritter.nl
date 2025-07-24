@@ -40,7 +40,7 @@ onMounted(() => {
 				<img
 					v-else
 					:src="logo"
-					alt="Jong Nederland Logo"
+					alt="Jong Nederland Neeritter Logo"
 					class="h-13 hover:scale-105 transition" />
 			</a>
 			<!-- Hamburger icon (mobile only) -->
