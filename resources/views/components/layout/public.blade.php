@@ -3,7 +3,8 @@
         JongNL Neeritter
     </x-slot>
     <x-slot:navbar>
-        <Navbar home logo="{{ asset('/images/vector/logo.svg') }}"></Navbar>
+        {{-- <Navbar home logo="{{ asset('/images/vector/logo.svg') }}"></Navbar> --}}
+        <x-navtest :home="true" logo="/images/logo.svg" />
     </x-slot>
     {{ $slot }}
     <x-slot:footer>

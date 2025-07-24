@@ -2,7 +2,7 @@
     <div id="banner" class="bg-jnn-logo-bl overflow-hidden flex flex-col items-center">
 
         <img src="{{ asset('/images/vector/banner.svg') }}" alt="Jong Nederland Neeritter: Het avontuur van je leven"
-            loading="lazy" class="w-[120vw] sm:w-[80%] m-2">
+            loading="eager" class="w-[120vw] sm:w-[80%] m-2">
 
         {{-- CTA Lint --}}
         <div class="flex justify-between w-full items-center bg-black/30 -mb-4 px-8 pt-2 pb-6">
@@ -38,6 +38,7 @@ aaaaaaaaaa
 <br>aaaaaaaaaa
 <br>aaaaaaaaaa
 <br>
+
 </x-layout.public>
 <style>
     #banner {

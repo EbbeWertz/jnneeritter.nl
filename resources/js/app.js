@@ -7,6 +7,7 @@ import Navbar from './components/Navbar.vue'
 
 
 
+
 const app = createApp()
 
 
