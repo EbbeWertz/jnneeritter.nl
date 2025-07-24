@@ -33,14 +33,72 @@
 </head>
 <body>
     <div id="app">
-        <h1 class="text-6xl font-bold">Welkom</h1>
-        <div class="flex gap-y-32">
-            <Knop variant="primary" > Word lid </Knop>
-            <Navlink icon="i-krant" color="jnn-blok-gr" href='/'>nieuws</Navlink>
-            <Navlink icon="i-agenda" color="jnn-blok-or" href='/'>groepsavond</Navlink>
-            <Navlink icon="i-contactboek" color="jnn-blok-rz" href='/'>contact</Navlink>
-            <Navlink icon="i-sleutel" color="jnn-blok-ge" href='/'>voor leiding</Navlink>
-        </div>
+        <Navbar home logo="{{asset('/images/vector/Logo.svg')}}"></Navbar>
+        <h1 >1</h1>
+        <h1>2</h1>
+        <h1>3</h1>
+        <h1>4</h1>
+        <h1>5</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
+
+
+        <h1>1</h1>
+        <h1>1</h1>
+        <h1>1</h1>
     </div>
 </body>
 </html>
