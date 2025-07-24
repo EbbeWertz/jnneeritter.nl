@@ -18,6 +18,7 @@
             font-display: swap;
         }
 
+
         @font-face {
             font-family: 'Caveat Brush';
             src: url('{{ asset('/fonts/CaveatBrush-Regular.woff2') }}') format('woff2');

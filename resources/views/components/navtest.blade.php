@@ -1,7 +1,10 @@
 @props(['home' => false, 'logo'])
 
-<div x-data="{drawerOpen: false, navbarHeight: 0}" x-init="navbarHeight = $refs.navbar.offsetHeight">
-    <div x-ref="navbar" class="px-4 py-2 border-b-4 fixed overflow-x-hidden top-0 left-0 right-0 z-50 border-jnn-logo-zw shadow-[0_10px_16px_0] shadow-[#0000004d] {{ $home ? 'bg-white' : 'bg-jnn-hoody' }}">
+<div x-data="{drawerOpen: false, navbarHeight: 0, rendered: false}" x-init="navbarHeight = $refs.navbar.offsetHeight; rendered = true;">
+    <div x-ref="navbar" class="px-4 py-2 border-b-4 overflow-x-hidden top-0 left-0 right-0 z-50 border-jnn-logo-zw shadow-[0_10px_16px_0] shadow-[#0000004d] {{ $home ? 'bg-white' : 'bg-jnn-hoody' }}"
+    x-bind:style="rendered ? { position: 'fixed' } : {}"
+
+    >
         <!-- Top bar -->
         <div class="flex justify-between items-center">
             <a href="/">
@@ -46,24 +49,20 @@
   class="overflow-hidden -mr-6 lg:hidden"
   x-cloak
   x-show="drawerOpen"
-  x-transition:enter="transition-all duration-500 ease-in-out"
-  x-transition:enter-start="max-h-0 opacity-0"
-  x-transition:enter-end="max-h-[500px] opacity-100"
-  x-transition:leave="transition-all duration-300 ease-in-out"
-  x-transition:leave-start="max-h-[500px] opacity-100"
-  x-transition:leave-end="max-h-0 opacity-0"
+  x-transition:enter="animate-expand-v"
+  x-transition:leave="animate-collapse-v"
 >
     <ul class="mt-2 flex flex-col gap-2 items-end">
-        <li class="w-full pl-16">
+        <li class="w-full pl-16 animate-slide-left translate-x-full">
             <Navlink icon="i-krant" color="jnn-blok-gr" href="/">nieuws</Navlink>
         </li>
-        <li class="w-full pl-12">
+        <li class="w-full pl-12 animate-slide-left translate-x-full" style="animation-delay: 0.2s">
             <Navlink icon="i-agenda" color="jnn-blok-or" href="/">groepsavond</Navlink>
         </li>
-        <li class="w-full pl-8">
+        <li class="w-full pl-8 animate-slide-left translate-x-full" style="animation-delay: 0.4s">
             <Navlink icon="i-contactboek" color="jnn-blok-rz" href="/">contact</Navlink>
         </li>
-        <li class="w-full pl-4">
+        <li class="w-full pl-4 animate-slide-left translate-x-full" style="animation-delay: 0.6s">
             <Navlink icon="i-sleutel" color="jnn-blok-ge" href="/">voor leiding</Navlink>
         </li>
     </ul>
@@ -71,19 +70,15 @@
 
     </div>
 
-    <div x-bind:style="`height:${navbarHeight}px`"></div>
+    <div x-show="rendered" x-bind:style="`height:${navbarHeight}px`"></div>
 
     <!-- Optional overlay when drawer is open -->
     <div
   x-cloak
   x-show="drawerOpen"
   x-on:click="$dispatch('close-drawer')"
-  x-transition:enter="transition-all duration-300 ease-out"
-  x-transition:enter-start="opacity-0"
-  x-transition:enter-end="opacity-100"
-  x-transition:leave="transition-all duration-200 ease-in"
-  x-transition:leave-start="opacity-100"
-  x-transition:leave-end="opacity-0"
+  x-transition:enter="animate-fade-in"
+  x-transition:leave="animate-fade-out"
   class="fixed inset-0 bg-black/50 backdrop-blur-xs z-40 lg:hidden"
 ></div>
 

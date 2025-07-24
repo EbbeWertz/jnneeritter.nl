@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -11,29 +11,87 @@
 @source inline("{hover:,}{bg,text}-jnn-paper-{p,s}");
 
 @theme {
-    /* lettertypes */
-    --font-hand: 'Patrick Hand', cursive, sans-serif; /* standaard (infoboekje font) */
-    --font-brush: 'Caveat Brush', cursive, sans-serif; /* quote/kleine titel */
-    --font-bubblegum: 'Bubblegum Sans', cursive, sans-serif; /* hoofd titel */
+	/* lettertypes */
+	--font-hand: "Patrick Hand", cursive, sans-serif; /* standaard (infoboekje font) */
+	--font-brush: "Caveat Brush", cursive, sans-serif; /* quote/kleine titel */
+	--font-bubblegum: "Bubblegum Sans", cursive, sans-serif; /* hoofd titel */
 
-    /* hoody donkergroen */
-    --color-jnn-hoody: #2E512F;
+	/* hoody donkergroen */
+	--color-jnn-hoody: #2e512f;
 
-    /* kleuren uit blokjes in logo */
-    --color-jnn-blok-gr: #67B66E; /*groen*/
-    --color-jnn-blok-ge: #FCD83A; /*geel*/
-    --color-jnn-blok-rz: #EE81B2; /*roze*/
-    --color-jnn-blok-or: #EB6B44; /*oranje*/
+	/* kleuren uit blokjes in logo */
+	--color-jnn-blok-gr: #67b66e; /*groen*/
+	--color-jnn-blok-ge: #fcd83a; /*geel*/
+	--color-jnn-blok-rz: #ee81b2; /*roze*/
+	--color-jnn-blok-or: #eb6b44; /*oranje*/
 
-    /* kleuren uit logo zelf */
-    --color-jnn-logo-bl: #01B0EE; /*blauw*/
-    --color-jnn-logo-rz: #EC038B; /*roze*/
-    --color-jnn-logo-ge: #FDEB07; /*geel*/
-    --color-jnn-logo-zw: #231F20; /*zwart*/
+	/* kleuren uit logo zelf */
+	--color-jnn-logo-bl: #01b0ee; /*blauw*/
+	--color-jnn-logo-rz: #ec038b; /*roze*/
+	--color-jnn-logo-ge: #fdeb07; /*geel*/
+	--color-jnn-logo-zw: #231f20; /*zwart*/
 
-    /* achtergrondkleuren */
-    --color-jnn-paper-p: #F9F3E8; /*primair*/
-    --color-jnn-paper-s: #67B66E; /*secundair (transparant)*/
+	/* achtergrondkleuren */
+	--color-jnn-paper-p: #f9f3e8; /*primair*/
+	--color-jnn-paper-s: #67b66e; /*secundair (transparant)*/
+
+	--animate-slide-right-3: rightSlide 3s ease forwards;
+	@keyframes rightSlide {
+		0% {
+			transform: translateX(-100%);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+    --animate-slide-left: leftslide 0.5s ease forwards;
+	@keyframes leftslide {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-100%);
+		}
+	}
+
+    --animate-expand-v: verticalExpand 0.5s ease-in-out forwards;
+
+  @keyframes verticalExpand {
+    0% {
+      max-height: 0;
+      opacity: 0;
+    }
+    100% {
+      max-height: 100vh;
+      opacity: 1;
+    }
+  }
+
+  --animate-collapse-v: verticalCollapse 0.3s ease-in-out forwards;
+
+  @keyframes verticalCollapse {
+    0% {
+      max-height: 100vh;
+      opacity: 1;
+    }
+    100% {
+      max-height: 0;
+      opacity: 0;
+    }
+  }
+
+  --animate-fade-in: fadeIn 0.3s ease-out forwards;
+  --animate-fade-out: fadeOut 0.2s ease-in forwards;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
 }
-
 
