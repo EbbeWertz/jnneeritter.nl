@@ -32,6 +32,13 @@
         
     </div>
 
+    <form action="/mail" method="post">
+        @csrf
+        <label for="email">adres:</label>
+        <input type="email" name="email" id="email">
+        <button type="submit">zend</button>
+    </form>
+
 </x-layout.public>
 <style>
     #banner {
