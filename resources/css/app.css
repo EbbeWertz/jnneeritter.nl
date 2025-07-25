@@ -5,10 +5,13 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 @source '../**/*.vue';
-@source inline("{hover:,}{bg,text}-jnn-hoody");
-@source inline("{group-,}{hover:,}{bg,text}-jnn-blok-{gr,ge,rz,or}");
-@source inline("{hover:,}{bg,text}-jnn-logo-{bl,rz,zw}");
-@source inline("{hover:,}{bg,text}-jnn-paper-{p,s}");
+
+@import "./animations.css";
+
+[x-cloak] {
+    display: none !important;
+}
+
 
 @theme {
 	/* lettertypes */
@@ -35,63 +38,48 @@
 	--color-jnn-paper-p: #f9f3e8; /*primair*/
 	--color-jnn-paper-s: #67b66e; /*secundair (transparant)*/
 
-	--animate-slide-right-3: rightSlide 3s ease forwards;
-	@keyframes rightSlide {
-		0% {
-			transform: translateX(-100%);
-		}
-		100% {
-			transform: translateX(0);
-		}
-	}
+	--animate-slide-right-3: rightSlide 2s ease forwards;
+	--animate-slide-right-in: rightslideIn 0.5s ease forwards;
+    --animate-slide-right-out: rightslideOut 0.5s ease forwards;
 
-    --animate-slide-left: leftslide 0.5s ease forwards;
-	@keyframes leftslide {
-		0% {
-			transform: translateX(0);
-		}
-		100% {
-			transform: translateX(-100%);
-		}
-	}
+    --animate-expand-v: verticalExpand 0.7s ease-in-out forwards;
+	--animate-collapse-v: verticalCollapse 0.3s ease-in-out forwards;
 
-    --animate-expand-v: verticalExpand 0.5s ease-in-out forwards;
-
-  @keyframes verticalExpand {
-    0% {
-      max-height: 0;
-      opacity: 0;
-    }
-    100% {
-      max-height: 100vh;
-      opacity: 1;
-    }
-  }
-
-  --animate-collapse-v: verticalCollapse 0.3s ease-in-out forwards;
-
-  @keyframes verticalCollapse {
-    0% {
-      max-height: 100vh;
-      opacity: 1;
-    }
-    100% {
-      max-height: 0;
-      opacity: 0;
-    }
-  }
-
-  --animate-fade-in: fadeIn 0.3s ease-out forwards;
-  --animate-fade-out: fadeOut 0.2s ease-in forwards;
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-  }
+	--animate-fade-in: fadeIn 0.3s ease-out forwards;
+	--animate-fade-out: fadeOut 0.2s ease-in forwards;
 }
 
+/*
+    DYNAMIC STYLES SAFELIST
+ */
+/* navbarlink.blade.php */
+@source inline("{group-hover:text,bg}-jnn-blok-{gr,ge,rz,or}");
+
+/*
+    REPEATABLE COMPONENT STYLES
+ */
+
+/* knop.blade.php */
+.knop {
+	@apply flex items-center justify-center w-max py-1 px-4 rounded-sm
+    shadow-[4px_4px_0_0] shadow-jnn-hoody cursor-pointer border-2 border-jnn-logo-zw
+    hover:rotate-1 hover:brightness-125 active:translate-[2px] active:shadow-[2px_2px_0_0] active:rotate-0;
+}
+.knop-primary {
+	@apply bg-jnn-logo-bl text-white;
+}
+.knop-secondary {
+	@apply bg-white text-jnn-logo-bl;
+}
+.knop-label {
+	@apply inline-block font-hand font-bold text-2xl text-center drop-shadow-[1px_2px_0px_black];
+}
+.navbarlink{
+    @apply flex w-full lg:w-max items-stretch h-12 p-1 pr-2 border-transparent border-2 rounded-sm
+            shadow-[4px_4px_0_0] shadow-[#0008] cursor-pointer lg:rotate-2 lg:hover:rotate-4 hover:bg-white
+            hover:border-jnn-logo-zw active:translate-0.5 active:shadow-[2px_2px_0_0] lg:active:rotate-2
+            active:brightness-75 transition-all;
+}
+.navbarlink-label{
+    @apply ml-2 font-hand font-bold text-2xl transition text-jnn-logo-zw;
+}

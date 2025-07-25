@@ -34,7 +34,9 @@ class MakeIconComponents extends Command
             $name = Str::kebab($file->getFilenameWithoutExtension());
             $componentPath = "$target/$name.blade.php";
 
-            $svg = File::get($file->getRealPath());
+            $rawSvg = File::get($file->getRealPath());
+            $svg = str_replace('<svg', '<svg {{ $attributes }}', $rawSvg);
+
 
             File::put($componentPath, $svg);
             $this->info("Created: $name");
