@@ -8,7 +8,7 @@
         <div class="flex justify-between w-full items-center bg-black/30 -mb-4 px-8 pt-2 pb-6 animate-slide-right-3">
             {{-- Welkom & actions --}}
             <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
-                <span class="font-hand text-3xl drop-shadow-[1px_2px_0px_black] text-white">Welkom op onze
+                <span class="font-hand text-3xl drop-shadow-[1px_2px_0px_black] text-white font-bold">Welkom op onze
                     website!</span>
                 <div class="flex gap-8">
                     <x-knop>Over Ons</x-knop>
