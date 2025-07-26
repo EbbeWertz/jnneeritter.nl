@@ -36,7 +36,7 @@
 
 	/* achtergrondkleuren */
 	--color-jnn-paper-p: #f9f3e8; /*primair*/
-	--color-jnn-paper-s: #67b66e; /*secundair (transparant)*/
+	--color-jnn-paper-s: #67b66e80; /*secundair (transparant)*/
 
 	--animate-slide-right-3: rightSlide 2s ease forwards;
 	--animate-slide-right-in: rightslideIn 0.5s ease forwards;

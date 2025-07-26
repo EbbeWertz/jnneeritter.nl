@@ -1,4 +1,4 @@
-<x-layout.public>
+<x-layout.public home>
     <div id="banner" class="bg-jnn-logo-bl flex flex-col items-center">
 
         <img src="{{ asset('/images/vector/banner.svg') }}" alt="Jong Nederland Neeritter: Het avontuur van je leven"
@@ -29,15 +29,12 @@
         <x-icons.scheidlijno class="w-[2048px] min-w-screen text-jnn-paper-p z-30 translate-y-px" />
 
         </div >
-        
     </div>
 
-    <form action="/mail" method="post">
-        @csrf
-        <label for="email">adres:</label>
-        <input type="email" name="email" id="email">
-        <button type="submit">zend</button>
-    </form>
+            <span class="font-bubblegum text-jnn-hoody text-5xl w-full border-b-2 border-jnn-hoody">blablabla</span>
+
+            <x-groenesectie>iets</x-groenesectie>
+
 
 </x-layout.public>
 <style>
