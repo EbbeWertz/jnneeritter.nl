@@ -7,7 +7,7 @@
 
         <div class="flex justify-between items-center">
             {{-- naam/logo --}}
-            <a href="/">
+            <a href="{{route('home')}}">
                 @if ($home)
                     <span class="flex items-end gap-4">
                         <span class="text-jnn-logo-zw font-bubblegum text-3xl font-bold">Jong Nederland</span>
@@ -15,7 +15,7 @@
                     </span>
                 @else
                     <img src="{{ $logo }}" alt="Jong Nederland Neeritter Logo"
-                        class="h-13 hover:scale-105 transition" />
+                        class="h-10 lg:h-13 hover:scale-105 transition" />
                 @endif
             </a>
 
@@ -29,7 +29,7 @@
                             <!-- Button -->
                             <div
                                 class="bg-jnn-logo-bl/75 flex w-full lg:w-max items-stretch h-12 p-1 pr-2 border-transparent border-2 rounded-sm shadow-[4px_4px_0_0] shadow-[#0008] cursor-pointer lg:rotate-2 group-hover:rotate-0 group-hover:bg-white group-hover:border-jnn-logo-zw transition-all">
-                                <x-icons.expand class="text-jnn-logo-zw w-4 ml-2" />
+                                <x-icons.expand class="text-jnn-logo-zw w-4 ml-2 transition-all" x-bind:class="{ '-rotate-90': open }"/>
                                 <span class="navbarlink-label group-hover:underline">algemeen</span>
                             </div>
 
@@ -52,7 +52,7 @@
                     </li>
                     <li><x-navbarlink icon="krant" color="jnn-blok-gr" href="/">nieuws</x-navbarlink></li>
                     <li><x-navbarlink icon="agenda" color="jnn-blok-or" href="/">activiteiten</x-navbarlink></li>
-                    <li><x-navbarlink icon="contactboek" color="jnn-blok-rz" href="/">contact</x-navbarlink></li>
+                    <li><x-navbarlink icon="contactboek" color="jnn-blok-rz" href="{{route('contact')}}">contact</x-navbarlink></li>
                     <li><x-navbarlink icon="sleutel" color="jnn-blok-ge" href="/">word lid</x-navbarlink></li>
                 </ul>
             </div>
@@ -73,7 +73,30 @@
         {{-- verticale drawer voor mobile links --}}
         <div class="lg:hidden" x-cloak x-show="drawerOpen" x-transition:enter="animate-expand-v"
             x-transition:leave="animate-collapse-v">
-            <ul class="mt-2 px-4 pb-4 flex flex-col gap-2 items-end -mr-8">
+            <ul class="mt-2 pl-4 pb-4 flex flex-col gap-2 items-end -mr-8">
+                <li class="w-full pb-2 mb-2 border-b-2 {{ $home ? 'border-jnn-logo-zw/50' : 'border-white/50' }}">
+                    <div x-data="{ open: false }" class="w-full">
+                        <!-- Toggle Button -->
+                        <button @click="open = !open"
+                            class="w-full flex items-center justify-between text-left px-4 py-2 rounded-sm hover:bg-jnn-blok-ge/10 transition">
+                            <span class="flex items-center gap-2 text-2xl font-bold text-jnn-logo-bl font-hand">
+                                algemeen
+                                <x-icons.expand class="w-4 h-4 {{ $home ? 'text-jnn-logo-zw' : 'text-white/50' }}" x-bind:class="{ 'rotate-180': open }" />
+                                
+                            </span>
+                        </button>
+
+                        <!-- Dropdown Items -->
+                        <ul x-show="open" x-transition:enter="animate-expand-v" x-transition:leave="animate-collapse-v"
+                            class="pl-8 mt-2 space-y-2 text-xl {{$home ? 'text-jnn-logo-zw' : 'text-white'}} font-hand">
+                            <li><a href="/link1" class="block bg-jnn-logo-bl/10 rounded-sm hover:underline px-2 py-1">over ons</a></li>
+                            <li><a href="/link1" class="block {{$home ? 'bg-jnn-logo-zw/10' : 'bg-white/10'}} rounded-sm hover:underline px-2 py-1">groepen</a></li>
+                            <li><a href="/link2" class="block bg-jnn-logo-bl/10 rounded-sm hover:underline px-2 py-1">bestuur</a></li>
+                            <li><a href="/link3" class="block {{$home ? 'bg-jnn-logo-zw/10' : 'bg-white/10'}} rounded-sm hover:underline px-2 py-1">geschiedenis</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <span class="text-2xl pl-4 font-bold text-jnn-logo-bl font-hand w-full mb-2">snelle links</span>
                 <li class="w-full pl-16 animate-slide-right-in translate-x-full">
                     <x-navbarlink icon="krant" color="jnn-blok-gr" href="/">nieuws</x-navbarlink>
                 </li>
@@ -81,7 +104,7 @@
                     <x-navbarlink icon="agenda" color="jnn-blok-or" href="/">activiteiten</x-navbarlink>
                 </li>
                 <li class="w-full pl-8 animate-slide-right-in translate-x-full" style="animation-delay: 0.4s">
-                    <x-navbarlink icon="contactboek" color="jnn-blok-rz" href="/">contact</x-navbarlink>
+                    <x-navbarlink icon="contactboek" color="jnn-blok-rz" href="{{route('contact')}}">contact</x-navbarlink>
                 </li>
                 <li class="w-full pl-4 animate-slide-right-in translate-x-full" style="animation-delay: 0.6s">
                     <x-navbarlink icon="sleutel" color="jnn-blok-ge" href="/">word lid</x-navbarlink>

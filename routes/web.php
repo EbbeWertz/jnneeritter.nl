@@ -6,7 +6,11 @@ use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
 
 Route::get('/beheer', function () {
     return view('admin');
