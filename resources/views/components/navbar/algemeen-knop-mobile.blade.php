@@ -8,7 +8,7 @@
     <button x-on:click="open = !open"
         class="w-full flex items-center justify-between text-left px-4 py-2 rounded-sm transition">
         <span class="flex items-center gap-2 text-2xl font-bold text-jnn-logo-bl font-hand">
-            algemeen
+            Algemeen
             <x-icons.expand class="w-4 h-4 {{ $home ? 'text-jnn-logo-zw' : 'text-white/50' }}"
                 x-bind:class="{ 'rotate-180': open }" />
 

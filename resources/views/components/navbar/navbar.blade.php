@@ -2,16 +2,16 @@
 
 @php
     $algemeenLinks = [
-        'over ons' => '/',
-        'groepen' => '/',
-        'bestuur' => '/',
-        'geschiedenis' => '/',
+        'Over Ons' => '/',
+        'Groepen' => '/',
+        'Bestuur' => '/',
+        'Geschiedenis' => '/',
     ];
     $snelLinks = [
-        ['label' => 'nieuws', 'icon' => 'krant', 'color' => 'jnn-blok-gr', 'href' => '/'],
-        ['label' => 'activiteiten', 'icon' => 'agenda', 'color' => 'jnn-blok-or', 'href' => '/'],
-        ['label' => 'contact', 'icon' => 'contactboek', 'color' => 'jnn-blok-rz', 'href' => route('contact')],
-        ['label' => 'word lid', 'icon' => 'sleutel', 'color' => 'jnn-blok-ge', 'href' => '/'],
+        ['label' => 'Nieuws', 'icon' => 'krant', 'color' => 'jnn-blok-gr', 'href' => '/'],
+        ['label' => 'Activiteiten', 'icon' => 'agenda', 'color' => 'jnn-blok-or', 'href' => '/'],
+        ['label' => 'Contact', 'icon' => 'contactboek', 'color' => 'jnn-blok-rz', 'href' => route('contact')],
+        ['label' => 'Word Lid', 'icon' => 'sleutel', 'color' => 'jnn-blok-ge', 'href' => route('lid-worden')],
     ];
 @endphp
 

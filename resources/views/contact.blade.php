@@ -9,7 +9,7 @@
                 <div>
                     <h2 class="text-2xl font-bold text-jnn-hoody">Algemeen</h2>
                     <p>Email:
-                        <a href="mailto:info@jnneeritter.nl" class="text-jnn-logo-bl underline">
+                        <a href="mailto:info@jnneeritter.nl" class="text-jnn-logo-bl-d hover:text-jnn-logo-bl-d/70 underline">
                             info@jnneeritter.nl
                         </a>
                     </p>
@@ -53,16 +53,16 @@
                         <textarea id="bericht" name="bericht" rows="4" required
                             class="w-full border-2 border-jnn-logo-zw/50 p-2 rounded-sm shadow-[4px_4px_0_0] shadow-[#0008] bg-white"></textarea>
                     </div>
-                    <x-knop type="submit">verstuur</x-knop>
+                    <x-knop type="submit">Verstuur</x-knop>
                 </form>
             </div>
 
         </div>
 
         {{-- ROLLEN + FORMULIER --}}
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="flex flex-col md:flex-row gap-8">
             {{-- Rollen --}}
-            <div class="space-y-6">
+            <div class="md:w-1/2">
                 @php
                     $rollen = [
                         [
@@ -91,12 +91,12 @@
                         @endif
                         <p>Email:
                             <a href="mailto:{{ $persoon['email'] }}"
-                                class="text-jnn-logo-bl underline">{{ $persoon['email'] }}</a>
+                                class="text-jnn-logo-bl-d hover:text-jnn-logo-bl-d/70 underline">{{ $persoon['email'] }}</a>
                         </p>
                         @if (isset($persoon['tel']))
                             <p>Telefoon:
                                 <a href="tel:{{ $persoon['tel'] }}"
-                                    class="text-jnn-logo-bl underline">{{ $persoon['tel'] }}</a>
+                                    class="text-jnn-logo-bl-d hover:text-jnn-logo-bl-d/70 underline">{{ $persoon['tel'] }}</a>
                             </p>
                         @endif
                     </div>
@@ -105,9 +105,9 @@
 
             {{-- Formulier --}}
             {{-- Rechterkolom: afbeelding --}}
-            <div class="md:w-full flex flex-col items-center">
-                <img src="{{ asset('images/bitmap/pluumke_computer.webp') }}"
-                    alt="pluumke computer"
+            <div class="md:w-1/2 flex flex-col items-center">
+                <img src="{{ asset('images/bitmap/pluumke_telefoon.webp') }}"
+                    alt="pluumke met telefoon"
                     class="w-2/3 object-contain">
             </div>
         </div>

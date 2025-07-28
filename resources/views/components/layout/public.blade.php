@@ -14,7 +14,7 @@
         {{ $header ?? '' }}
         @if (isset($titel))
             <h1
-                class="font-hand font-bold text-4xl text-jnn-logo-zw border-b-2 border-jnn-logo-zw text-center mx-4 md:mx-16 my-4">
+                class="font-bubblegum font-bold text-4xl text-jnn-logo-zw border-b-2 border-jnn-logo-zw text-center mx-4 md:mx-16 my-4">
                 {{ $titel }}
             </h1>
         @endif

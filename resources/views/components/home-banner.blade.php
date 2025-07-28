@@ -10,8 +10,8 @@
             <span class="font-hand text-3xl drop-shadow-[1px_2px_0px_black] text-white font-bold">Welkom op onze
                 website!</span>
             <div class="flex gap-8">
-                <x-knop>Over Ons</x-knop>
-                <x-knop secondary>Word Lid</x-knop>
+                <x-knop href="/">Over Ons</x-knop>
+                <x-knop href="lid-worden" secondary>Word Lid</x-knop>
             </div>
         </div>
         {{-- Socials --}}
