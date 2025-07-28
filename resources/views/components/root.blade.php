@@ -37,13 +37,14 @@
 </head>
 
 <body>
-    <div class="flex flex-col min-h-screen">
+    <div class="flex flex-col min-h-screen bg-jnn-paper-p">
         <header>
             <nav>
                 {{ $navbar }}
             </nav>
+            {{ $header }}
         </header>
-        <main class="flex-grow bg-jnn-paper-p">
+        <main class="flex-grow">
             {{ $slot }}
         </main>
         <footer>
