@@ -1,11 +1,4 @@
-<x-layout.public>
-    <x-slot:header>
-        <h1
-            class="font-hand font-bold text-4xl text-jnn-logo-zw border-b-2 border-jnn-logo-zw text-center mx-4 md:mx-16 my-4">
-            Contact
-        </h1>
-    </x-slot>
-
+<x-layout.public titel="Contact">
     <section class="px-4 md:px-16 py-8 font-hand text-jnn-logo-zw space-y-16">
 
         {{-- ALGEMEEN + LOCATIE + GOOGLE MAPS + AFBEELDING --}}
@@ -60,7 +53,7 @@
                         <textarea id="bericht" name="bericht" rows="4" required
                             class="w-full border-2 border-jnn-logo-zw/50 p-2 rounded-sm shadow-[4px_4px_0_0] shadow-[#0008] bg-white"></textarea>
                     </div>
-                    <x-knop type="submit">Verstuur</x-knop>
+                    <x-knop type="submit">verstuur</x-knop>
                 </form>
             </div>
 

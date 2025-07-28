@@ -1,7 +1,7 @@
 <x-layout.public home>
 
     <x-slot:header>
-        <x-homebanner />
+        <x-home-banner />
     </x-slot>
 
 

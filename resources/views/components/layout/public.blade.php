@@ -1,5 +1,6 @@
 @props([
     'home' => false,
+    'titel' => null,
 ])
 
 <x-root>
@@ -7,10 +8,16 @@
         JongNL Neeritter
     </x-slot>
     <x-slot:navbar>
-        <x-navbar.navbar home="{{$home}}" logo="{{asset('/images/vector/logo.svg')}}" />
+        <x-navbar.navbar home="{{ $home }}" logo="{{ asset('/images/vector/logo.svg') }}" />
     </x-slot>
     <x-slot:header>
-        {{ $header ?? ''}}
+        {{ $header ?? '' }}
+        @if (isset($titel))
+            <h1
+                class="font-hand font-bold text-4xl text-jnn-logo-zw border-b-2 border-jnn-logo-zw text-center mx-4 md:mx-16 my-4">
+                {{ $titel }}
+            </h1>
+        @endif
     </x-slot>
     {{ $slot }}
     <x-slot:footer>

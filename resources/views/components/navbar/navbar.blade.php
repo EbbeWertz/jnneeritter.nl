@@ -36,10 +36,10 @@
 
             {{-- horizontale links (desktop) --}}
             <ul class="hidden lg:flex gap-2">
-                <li><x-navbar.algemeenknopdesktop :links="$algemeenLinks" /></li>
+                <li><x-navbar.algemeen-knop-desktop :links="$algemeenLinks" /></li>
                 @foreach ($snelLinks as $link)
-                    <li><x-navbar.snellinkknop :icon="$link['icon']" :color="$link['color']"
-                            :href="$link['href']">{{ $link['label'] }}</x-navbar.snellinkknop></li>
+                    <li><x-navbar.snellink-knop :icon="$link['icon']" :color="$link['color']"
+                            :href="$link['href']">{{ $link['label'] }}</x-navbar.snellink-knop></li>
                 @endforeach
             </ul>
 
@@ -60,15 +60,15 @@
             x-transition:leave="animate-collapse-v">
             <ul class="mt-2 pl-4 pb-4 flex flex-col gap-2 items-end -mr-8">
                 <li class="w-full pb-2 mb-2 border-b-2 {{ $home ? 'border-jnn-logo-zw/50' : 'border-white/50' }}">
-                    <x-navbar.algemeenknopmobile :home="$home" :links="$algemeenLinks" />
+                    <x-navbar.algemeen-knop-mobile :home="$home" :links="$algemeenLinks" />
                 </li>
                 <span class="text-2xl pl-4 font-bold text-jnn-logo-bl font-hand w-full mb-2">snelle links</span>
 
                 @foreach ($snelLinks as $link)
                     <li class="w-full pl-16 animate-slide-right-in translate-x-full"
                         style="padding-left: {{ 16 * (count($snelLinks) - $loop->index) }}px; animation-delay: {{ 0.2 * $loop->index }}s;">
-                        <x-navbar.snellinkknop :icon="$link['icon']" :color="$link['color']"
-                            :href="$link['href']">{{ $link['label'] }}</x-navbar.snellinkknop>
+                        <x-navbar.snellink-knop :icon="$link['icon']" :color="$link['color']"
+                            :href="$link['href']">{{ $link['label'] }}</x-navbar.snellink-knop>
                     </li>
                 @endforeach
             </ul>
