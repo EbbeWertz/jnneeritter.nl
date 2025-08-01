@@ -51,10 +51,10 @@
                     <p>Klaar om lid te worden? Download dan het opgaveformulierformulier hieronder en breng het mee naar
                         de volgende groepsavond:</p>
 
-                    <x-knop href="/download/opgaveformulier.pdf" target="_blank" class="my-4">
+                    <x-knop href="{{route('download-opgaveformulier')}}" target="_blank" class="my-4">
                         Download Opgaveformulier
                     </x-knop>
-                    <p>Heb je een vraag, of weet je niet waar ons jeugdhuis is? Dan kan je altijd terecht op onze contactpagina.</p>
+                    <p>Heb je een vraag, of weet je niet waar ons jeugdhuis is? Dan kan je altijd terecht op onze <a href="{{route('contact')}}" class="underline text-jnn-logo-bl-d hover:text-jnn-logo-bl-d/70">contactpagina</a>.</p>
                 </div>
 
             </div>

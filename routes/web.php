@@ -22,14 +22,14 @@ Route::get('/beheer', function () {
     return view('admin');
 });
 Route::get('/download/opgaveformulier.pdf', function () {
-    $path = storage_path('app/public/.gitignore');
+    $path = storage_path('app/public/Opgavenformulier.pdf');
 
     if (!file_exists($path)) {
         abort(404);
     }
 
-    return response()->download($path, '.gitignore');
-});
+    return response()->download($path, 'Opgavenformulier.pdf');
+})->name('download-opgaveformulier');
 
 Route::post('/mail', function (Illuminate\Http\Request $request) {
     $request->validate([

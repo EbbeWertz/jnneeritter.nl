@@ -33,6 +33,7 @@
                 </div>
             </div>
 
+            {{-- Formulier --}}
 
             <div class="md:w-1/2">
                 <h2 class="text-2xl font-bold text-jnn-hoody mb-4">Contactformulier</h2>
@@ -103,7 +104,6 @@
                 @endforeach
             </div>
 
-            {{-- Formulier --}}
             {{-- Rechterkolom: afbeelding --}}
             <div class="md:w-1/2 flex flex-col items-center">
                 <img src="{{ asset('images/bitmap/pluumke_telefoon.webp') }}"

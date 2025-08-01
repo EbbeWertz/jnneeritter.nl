@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'JongNL Neeritter' }}</title>
-    <link rel="icon" type="image/x-icon" href="favicon.svg">
+    <link rel="icon" type="image/x-icon" href="{{asset('favicon.svg')}}">
     @vite('resources/js/app.js')
     @vite('resources/css/app.css')
     <style>
