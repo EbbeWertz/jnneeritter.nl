@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\NoIndex;
 use Illuminate\Support\Facades\Route;
 use App\Mail\MailTest;
 use Illuminate\Support\Facades\Mail;
@@ -18,9 +19,21 @@ Route::get('/lid-worden', function () {
     return view('lid-worden');
 })->name('lid-worden');
 
-Route::get('/beheer', function () {
-    return view('admin.admin');
+Route::prefix('beheer')->as('admin.')->middleware([NoIndex::class])->group(function () {
+    Route::get('/', function () {
+        return view('admin.home'); })->name('home');
+    Route::get('/nieuws', function () {
+        return view('admin.nieuws'); })->name('nieuws');
+    Route::get('/activiteiten', function () {
+        return view('admin.activiteiten'); })->name('activiteiten');
+    Route::get('/documenten', function () {
+        return view('admin.documenten'); })->name('documenten');
+    Route::get('/info', function () {
+        return view('admin.info'); })->name('info');
+    Route::get('/accounts', function () {
+        return view('admin.accounts'); })->name('accounts');
 });
+
 Route::get('/download/opgaveformulier.pdf', function () {
     $path = storage_path('app/public/Opgavenformulier.pdf');
 
