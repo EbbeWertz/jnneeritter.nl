@@ -19,7 +19,7 @@ Route::get('/lid-worden', function () {
 })->name('lid-worden');
 
 Route::get('/beheer', function () {
-    return view('admin');
+    return view('admin.admin');
 });
 Route::get('/download/opgaveformulier.pdf', function () {
     $path = storage_path('app/public/Opgavenformulier.pdf');

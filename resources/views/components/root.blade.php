@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'JongNL Neeritter' }}</title>
-    <link rel="icon" type="image/x-icon" href="{{asset('favicon.svg')}}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.svg') }}">
     @vite('resources/js/app.js')
     @vite('resources/css/app.css')
     <style>
@@ -37,19 +37,37 @@
 </head>
 
 <body>
-    <div class="flex flex-col min-h-screen bg-jnn-paper-p">
-        <header>
-            <nav>
+    <div class="flex min-h-screen bg-jnn-paper-p">
+        {{-- fixed at side aside: --}}
+        @if (isset($aside))
+            <aside class="sticky top-0 z-50 h-screen">
+                {{ $aside }}
+            </aside>
+        @endif
+        {{-- full vertical stack --}}
+        <div class="w-full min-h-screen flex flex-col">
+            {{-- fixed at top nav: --}}
+            <nav class="sticky top-0 z-50">
                 {{ $navbar }}
             </nav>
-            {{ $header }}
-        </header>
-        <main class="flex-grow">
-            {{ $slot }}
-        </main>
-        <footer>
-            {{ $footer }}
-        </footer>
+            {{-- Scrollable page: --}}
+            <div class="flex-grow">
+                @if (isset($header))
+                    <header>
+                        {{ $header }}
+                    </header>
+                @endif
+                <main>
+                    {{ $slot }}
+                </main>
+            </div>
+            {{-- footer at page bottom, min screen bottom --}}
+            @if (isset($footer))
+                <footer>
+                    {{ $footer }}
+                </footer>
+            @endif
+        </div>
     </div>
 </body>
 
